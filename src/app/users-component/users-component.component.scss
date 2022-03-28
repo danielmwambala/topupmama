@@ -1,0 +1,41 @@
+.header-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: flex-start;
+
+    h1, h2, h3, h4{
+        color: antiquewhite;
+        font-size: 1.4rem;
+    }
+    &__header-title{
+        color: rgb(238, 235, 235);
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-right: 2rem;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(238, 235, 235);
+        font-size: 1.4rem;
+        left: 100%;
+    }
+}
+
+.container-fluid{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+
+    h1, h2, h3, h4{
+        color: rgb(243, 23, 16);
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+.users-content{
+    margin: 0 1rem;
+}

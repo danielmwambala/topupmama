@@ -1,0 +1,78 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="header-container d-flex">
+        <p class="header-container__header-title">Topup Mama</p>
+        <h3>My account</h3>
+        <h3 class="mx-3">Users</h3>
+      <div class="pull-right">
+        <a routerLink="/">Logout</a>
+      </div>
+    </div>
+</nav>
+<div class="users-content">
+    <div class="container-fluid">
+        <h3>Users</h3>
+        <div class="d-flex">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a user</button>
+        </div>
+    </div>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">User ID</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of users">
+                <td>{{row.id}}</td>
+                <td>{{row.first_name}}</td>
+                <td>{{row.last_name}}</td>
+                <td>{{row.email}}</td>
+                <td>
+                    <button class="btn btn-success">Edit</button>
+                    <button (click)="deleteUser(row)" class="btn btn-danger mx-3">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a new user</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <!-- <div class="mb-3">
+                  <label for="firstname" class="form-label">First name</label>
+                  <input type="text" formControlname="firstname" class="form-control" id="firstname">
+                </div>
+                <div class="mb-3">
+                  <label for="lastname" class="form-label">Last name</label>
+                  <input type="text" formControlname="lastname" class="form-control" id="lastname">
+                </div> -->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" formControlname="email" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" formControlname="password" class="form-control" id="exampleInputPassword1">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
